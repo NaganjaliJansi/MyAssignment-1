@@ -55,13 +55,17 @@ public class FilesAssignment {
 		file = file+".txt";
 		File f = new File(FilesPath+"//"+file);
 		try {
-			if(f.exists()) {
-				System.out.println("File Already Exists");
-			}else {
-				f.createNewFile();
-				System.out.println(file+" Created");
+			try {
+				if(f.exists()) {
+					System.out.println("File Already Exists");
+				}else {
+					f.createNewFile();
+					System.out.println(file+" Created");
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
